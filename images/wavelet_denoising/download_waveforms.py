@@ -10,9 +10,13 @@ net = "II"
 stn = "PFO"
 channel = "BHZ"
 st = client.get_waveforms(net, stn, "00", channel,
-                          origin_time+30, origin_time+250, attach_response=True)
+                          origin_time+40, origin_time+300, attach_response=True)
 st_copy = st.copy()
 st_copy.remove_response(output="VEL")
+
+# Filtering with a lowpass on a copy of the original Trace
+st_copy[0].filter('highpass', freq=10.0, corners=2, zerophase=True)
+
 st.plot(
     outfile="myStream.png",
 )
