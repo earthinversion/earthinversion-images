@@ -45,7 +45,7 @@ if exist(fileloc,'file')
         axis tight;
         hold off;
         axis tight;
-        print(fig2,['denoise_signal_sym49','.jpg'],'-djpeg')
+        print(fig2,['denoise_signal_sym49','.jpg'],'-djpeg', '-r300')
         
         snrsym = -20*log10(norm(abs(data_double-XDEN))/norm(data_double))
         
@@ -61,7 +61,7 @@ if exist(fileloc,'file')
         axis tight;
         hold off;
         axis tight;
-        print(fig3,['denoise_signal_db1','.jpg'],'-djpeg')
+        print(fig3,['denoise_signal_db1','.jpg'],'-djpeg', '-r300')
         
         snrdb1 = -20*log10(norm(abs(data_double-XDEN_db1))/norm(data_double))
         
@@ -85,7 +85,7 @@ if exist(fileloc,'file')
             plot(det); title(['Noisy Wavelet Coefficients - Level '...
                   num2str(nn)]);
         end
-        print(fig5,['wavelet_reconstruction','.jpg'],'-djpeg')
+        print(fig5,['wavelet_reconstruction','.jpg'],'-djpeg', '-r300')
 
     end
 end

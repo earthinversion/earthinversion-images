@@ -24,7 +24,7 @@ hold off;
 xlim([0, 4000])
 axis tight;
 linkaxes([ax1 ax2],'x')
-print(fig3,['noisy_test_signal','.jpg'],'-djpeg')
+print(fig3,['noisy_test_signal','.jpg'],'-djpeg', '-r300')
 
 snrsym = -20*log10(norm(abs(denoised_signal-XN))/norm(XN))
 snrdb1 = -20*log10(norm(abs(denoised_signal_db1-XN))/norm(XN))
